@@ -1,0 +1,1 @@
+import{a5 as o,c,o as r,K as s}from"./6wy3AQI5.js";const t={},a={class:"flex flex-col gap-2 md:grid md:grid-flow-col md:auto-cols-fr"};function l(e,n){return r(),c("div",a,[s(e.$slots,"default")])}const f=o(t,[["render",l]]);export{f as default};

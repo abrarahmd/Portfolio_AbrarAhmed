@@ -1,0 +1,9 @@
+[[redirects]]
+force = true
+from = "/blog/gonderi/:slug"
+status = 301
+to = "/blog/:slug"
+
+[dev]
+targetPort = 3000
+port = 9999

@@ -310,6 +310,9 @@
       transition: all 0.3s ease;
       opacity: 0;
       animation: fadeInUp 1s ease forwards;
+      /* Added overflow handling */
+      overflow: hidden;
+      word-wrap: break-word;
     }
 
     .repo-card:hover {
@@ -323,6 +326,13 @@
       align-items: flex-start;
       justify-content: space-between;
       margin-bottom: 15px;
+      gap: 15px; /* Added gap to prevent overlap */
+    }
+
+    .repo-header-left {
+      /* New wrapper for name and visibility */
+      flex: 1;
+      min-width: 0; /* Allows flex item to shrink below content size */
     }
 
     .repo-name {
@@ -333,6 +343,11 @@
       margin-bottom: 5px;
       display: block;
       transition: color 0.3s ease;
+      /* Fixed text overflow */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
     }
 
     .repo-name:hover {
@@ -346,6 +361,8 @@
       border-radius: 12px;
       font-size: 0.75rem;
       font-weight: 500;
+      flex-shrink: 0; /* Prevents shrinking */
+      white-space: nowrap; /* Prevents text wrapping */
     }
 
     .repo-visibility.private {
@@ -358,6 +375,10 @@
       margin-bottom: 20px;
       line-height: 1.5;
       min-height: 40px;
+      /* Fixed text overflow for description */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
     }
 
     .repo-stats {
@@ -367,12 +388,16 @@
       margin-bottom: 15px;
       font-size: 0.9rem;
       color: var(--text-secondary);
+      /* Added flex wrap for responsive behavior */
+      flex-wrap: wrap;
     }
 
     .stat {
       display: flex;
       align-items: center;
       gap: 5px;
+      /* Prevent stats from breaking awkwardly */
+      white-space: nowrap;
     }
 
     .language-indicator {
@@ -380,6 +405,7 @@
       height: 12px;
       border-radius: 50%;
       display: inline-block;
+      flex-shrink: 0; /* Prevents shrinking */
     }
 
     .repo-meta {
@@ -390,11 +416,22 @@
       border-top: 1px solid var(--border);
       font-size: 0.85rem;
       color: var(--text-secondary);
+      gap: 15px; /* Added gap */
+    }
+
+    .repo-meta-date {
+      /* New wrapper for date */
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .repo-links {
       display: flex;
       gap: 15px;
+      flex-shrink: 0; /* Prevents shrinking */
     }
 
     .repo-link {
@@ -405,6 +442,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      white-space: nowrap; /* Prevents text wrapping */
     }
 
     .repo-link:hover {
@@ -490,6 +528,17 @@
         grid-template-columns: 1fr;
         gap: 20px;
       }
+
+      /* Mobile specific overflow fixes */
+      .repo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .repo-visibility {
+        align-self: flex-start;
+      }
     }
 
     @media (max-width: 480px) {
@@ -506,6 +555,17 @@
 
       .load-btn {
         padding: 10px 16px;
+      }
+
+      /* Extra small screen optimizations */
+      .repo-stats {
+        gap: 15px;
+      }
+
+      .repo-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
     }
 
@@ -720,10 +780,10 @@
 
       card.innerHTML = `
         <div class="repo-header">
-          <div>
-            <a href="${repo.html_url}" target="_blank" class="repo-name">${repo.name}</a>
-            <span class="repo-visibility ${repo.private ? 'private' : 'public'}">${repo.private ? 'Private' : 'Public'}</span>
+          <div class="repo-header-left">
+            <a href="${repo.html_url}" target="_blank" class="repo-name" title="${repo.name}">${repo.name}</a>
           </div>
+          <span class="repo-visibility ${repo.private ? 'private' : 'public'}">${repo.private ? 'Private' : 'Public'}</span>
         </div>
         <p class="repo-description">${repo.description || 'No description available'}</p>
         <div class="repo-stats">
@@ -733,7 +793,7 @@
           <div class="stat">👁️ ${repo.watchers_count}</div>
         </div>
         <div class="repo-meta">
-          <span>Updated ${formatDate(repo.updated_at)}</span>
+          <span class="repo-meta-date">Updated ${formatDate(repo.updated_at)}</span>
           <div class="repo-links">
             <a href="${repo.html_url}" target="_blank" class="repo-link">View →</a>
             ${repo.clone_url ? `<a href="${repo.clone_url}" class="repo-link">Clone →</a>` : ''}

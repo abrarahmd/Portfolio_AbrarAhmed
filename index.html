@@ -97,7 +97,7 @@
     /* Tools Animation Section */
     .tools-container {
       position: absolute;
-      bottom: 120px;
+      bottom: 250px; /* Moved up from 120px */
       left: 50%;
       transform: translateX(-50%);
       width: 80%;
@@ -158,7 +158,7 @@
     /* Navigation */
     .nav-container {
       position: absolute;
-      bottom: 40px;
+      bottom: 180px; /* Moved up from 40px */
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
@@ -218,7 +218,8 @@
     @media (max-width: 768px) {
       .tools-container {
         width: 90%;
-        bottom: 100px;
+        bottom: 220px; /* Increased spacing */
+        height: 50px;
       }
 
       .tool-logo {
@@ -229,18 +230,18 @@
 
       .nav-links {
         gap: 20px;
-        padding: 12px 20px;
+        padding: 12px 20px; /* Nav height = 24px padding + ~20px content = ~44px total */
       }
 
       .nav-container {
-        bottom: 30px;
+        bottom: 40px; /* Tools at 220px, nav total height ~44px, so gap = 220-40-44 = 136px clear space */
       }
     }
 
     @media (max-width: 480px) {
       .tools-container {
-        bottom: 90px;
-        height: 50px;
+        bottom: 200px; /* Increased spacing */
+        height: 45px;
       }
 
       .tool-logo {
@@ -251,7 +252,7 @@
 
       .nav-links {
         gap: 15px;
-        padding: 10px 15px;
+        padding: 10px 15px; /* Nav height = 20px padding + ~18px content = ~38px total */
         flex-wrap: wrap;
         justify-content: center;
         max-width: 90vw;
@@ -260,6 +261,38 @@
       .nav-links a {
         padding: 6px 12px;
         font-size: 0.9rem;
+      }
+
+      .nav-container {
+        bottom: 30px; /* Tools at 200px, nav total height ~38px, so gap = 200-30-38 = 132px clear space */
+      }
+    }
+
+    /* Additional spacing for very small screens */
+    @media (max-width: 380px) {
+      .tools-container {
+        bottom: 180px; /* Increased spacing */
+        height: 40px;
+      }
+
+      .tool-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+      }
+
+      .nav-container {
+        bottom: 25px; /* Tools at 180px, nav wraps so height ~60px, gap = 180-25-60 = 95px clear space */
+      }
+
+      .nav-links {
+        padding: 8px 12px; /* Wrapping nav will be taller */
+        gap: 10px;
+      }
+
+      .nav-links a {
+        padding: 4px 8px;
+        font-size: 0.8rem;
       }
     }
 

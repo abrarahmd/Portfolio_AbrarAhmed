@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Skills | Abrar Ahmed</title>
+    <style>
+        body { background-color: #f7f4f0; font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page">
+    <nav class="site-nav py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50" data-nav>
+        <div class="brand">
+            <span class="brand-name">Abrar Ahmed</span>
+        </div>
+        <div class="nav-links hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+            <a href="index.html#about" class="hover:text-gray-400">Home</a>
+            <a href="experience.html" class="hover:text-gray-400">Experience</a>
+            <a href="skills.html" class="hover:text-gray-400">Skills</a>
+            <a href="github.html" class="hover:text-gray-400">GitHub</a>
+            <a href="documents.html" class="hover:text-gray-400">Documents</a>
+            <a href="contact.html" class="hover:text-gray-400">Contact</a>
+        </div>
+        <div class="flex space-x-4 text-lg items-center">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+                <i class="fas fa-lightbulb"></i>
+            </button>
+            <a href="https://bd.linkedin.com/in/abrar-ahmed-b90484331" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/Phantom.N3rd" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/___abrarahmed___" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <main class="skills-main">
+        <section class="hero-bg skills-hero">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="page-title text-gray-800">Skills</h1>
+                <p class="page-subtitle">Simple, focused skill areas with quick highlights.</p>
+            </div>
+        </section>
+
+        <section class="skills-simple">
+            <div class="max-w-5xl mx-auto">
+                <article class="skills-block">
+                    <h2>AI/ML</h2>
+                    <div class="skills-meta">
+                        <span class="skills-pill">VLM</span>
+                        <span class="skills-pill">LLM</span>
+                        <span class="skills-pill">RAG</span>
+                        <span class="skills-pill">NLP</span>
+                    </div>
+                    <ul>
+                        <li>Multimodal reasoning and evaluation</li>
+                        <li>RAG and retrieval pipelines</li>
+                        <li>Vision + language model integration</li>
+                    </ul>
+                </article>
+
+                <article class="skills-block">
+                    <h2>Web Development</h2>
+                    <div class="skills-meta">
+                        <span class="skills-pill">React</span>
+                        <span class="skills-pill">Node</span>
+                        <span class="skills-pill">Express</span>
+                        <span class="skills-pill">n8n</span>
+                    </div>
+                    <ul>
+                        <li>Frontend interfaces and UI components</li>
+                        <li>API services and integration</li>
+                        <li>Automation with n8n workflows</li>
+                    </ul>
+                </article>
+
+                <article class="skills-block">
+                    <h2>Core CS</h2>
+                    <div class="skills-meta">
+                        <span class="skills-pill">DSA</span>
+                        <span class="skills-pill">Complexity</span>
+                        <span class="skills-pill">Optimization</span>
+                    </div>
+                    <ul>
+                        <li>Complexity and optimization</li>
+                        <li>Interview preparation</li>
+                    </ul>
+                </article>
+
+                <article class="skills-block">
+                    <h2>Teaching + Leadership</h2>
+                    <div class="skills-meta">
+                        <span class="skills-pill">Mentoring</span>
+                        <span class="skills-pill">Workshops</span>
+                        <span class="skills-pill">Coordination</span>
+                    </div>
+                    <ul>
+                        <li>Mentoring teams and workshops</li>
+                        <li>Event leadership and coordination</li>
+                    </ul>
+                </article>
+
+                <article class="skills-block">
+                    <h2>Languages</h2>
+                    <div class="skills-meta">
+                        <span class="skills-pill">Python</span>
+                        <span class="skills-pill">JavaScript</span>
+                        <span class="skills-pill">Automation</span>
+                    </div>
+                    <ul>
+                        <li>Python for modeling and automation</li>
+                        <li>JavaScript for web tooling</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 px-8 flex items-center justify-center text-gray-400 text-xs border-t border-gray-200 bg-white">
+        <p>© 2026 Abrar Ahmed</p>
+    </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -187,6 +187,24 @@
 	}
 }
 
+@media (max-width: 767px) {
+	.site-nav {
+		flex-wrap: wrap;
+		row-gap: 10px;
+	}
+
+	.site-nav .nav-links {
+		display: flex;
+		order: 3;
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px 14px;
+		font-size: 0.68rem;
+		letter-spacing: 0.12em;
+	}
+}
+
 @media (max-width: 640px) {
 	.site-nav {
 		padding-left: 16px;
